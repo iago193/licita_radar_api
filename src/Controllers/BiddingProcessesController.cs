@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace BiddingProcesses.Controller;
+namespace BiddingProcesses.Controllers;
 
 [ApiController]
 [Route("Licitações")]
