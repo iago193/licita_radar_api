@@ -1,12 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using licita_radar_api.Data;
+using LicitaRadarApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(
-        builder.Configuration.GetConnectionString("DefaultConnection")
-    ));
+var DefaultConnection = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(DefaultConnection));
 
 builder.Services.AddControllers();
 

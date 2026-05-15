@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using licita_radar_api.Model;
+using LicitaRadarApi.Model;
 
-namespace licita_radar_api.Data;
+namespace LicitaRadarApi.Data;
 
 public class AppDbContext : DbContext
 {
@@ -9,5 +9,5 @@ public class AppDbContext : DbContext
         : base(options)
     {
     }
-    public DbSet<User> Users { get; set; }
+    public DbSet<User> users { get; set; }
 }
