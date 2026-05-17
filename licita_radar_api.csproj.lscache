@@ -53,6 +53,10 @@ TemporaryDependencyNodeTargetIdentifier=net8.0
 /warnaserror+:NU1605,SYSLIB0011
 
 [sourceFiles]
+Migrations/
+ 20260517181527_Initial.cs
+ 20260517181527_Initial.Designer.cs
+ AppDbContextModelSnapshot.cs
 obj/Debug/net8.0/
  .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
  licita_radar_api.AssemblyInfo.cs
@@ -61,7 +65,7 @@ Program.cs
 src/
  Controllers/UserController.cs
  data/AppDbContext.cs
- Models/UserModel.cs
+ Models/UserTable.cs
 
 [metadataReferences]
 <DOTNET>/packs/Microsoft.AspNetCore.App.Ref/8.0.26/ref/net8.0/
