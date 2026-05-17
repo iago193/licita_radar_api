@@ -21,30 +21,30 @@ namespace licita_radar_api.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("LicitaRadarApi.Model.CreateUser", b =>
+            modelBuilder.Entity("LicitaRadarApi.Model.User", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("email")
+                    b.Property<string>("Email")
                         .HasColumnType("text");
 
-                    b.Property<string>("last_name")
+                    b.Property<string>("LastName")
                         .HasColumnType("text");
 
-                    b.Property<string>("name")
+                    b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<int>("number_phone")
+                    b.Property<int>("NumberPhone")
                         .HasColumnType("integer");
 
-                    b.Property<string>("password_hash")
+                    b.Property<string>("PasswordHash")
                         .HasColumnType("text");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("users");
                 });
