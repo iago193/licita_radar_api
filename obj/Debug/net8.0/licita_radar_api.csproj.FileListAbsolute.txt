@@ -1,11 +1,3 @@
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.csproj.AssemblyReference.cache
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.GeneratedMSBuildEditorConfig.editorconfig
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.AssemblyInfoInputs.cache
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.AssemblyInfo.cs
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.csproj.CoreCompileInputs.cache
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.MvcApplicationPartsAssemblyInfo.cs
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.MvcApplicationPartsAssemblyInfo.cache
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.sourcelink.json
 /home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/appsettings.Development.json
 /home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/appsettings.json
 /home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/licita_radar_api
@@ -90,6 +82,14 @@
 /home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.csproj.AssemblyReference.cache
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.GeneratedMSBuildEditorConfig.editorconfig
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.AssemblyInfoInputs.cache
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.AssemblyInfo.cs
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.csproj.CoreCompileInputs.cache
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.MvcApplicationPartsAssemblyInfo.cs
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.MvcApplicationPartsAssemblyInfo.cache
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.sourcelink.json
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets.build.json
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets.development.json
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets/msbuild.licita_radar_api.Microsoft.AspNetCore.StaticWebAssets.props

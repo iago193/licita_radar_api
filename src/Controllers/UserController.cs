@@ -1,3 +1,6 @@
+using LicitaRadarApi.Model;
+using LicitaRadarApi.Service;
+
 using Microsoft.AspNetCore.Mvc;
 
 namespace LicitaRadarApi.Controllers;
@@ -5,11 +8,19 @@ namespace LicitaRadarApi.Controllers;
 [ApiController]
 [Route("user")]
 
-public class User : ControllerBase
+public class UserController : ControllerBase
 {
-    [HttpPost]
-    public async Task<IActionResult> create()
+    private readonly UserService _userservice;
+
+    public UserController(UserService userService)
     {
-        return Ok("Funcionando");
+        _userservice = userService;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> create(UserModel user)
+    {
+        string res = await _userservice.createUser(user);
+        return Ok(res);
     }
 }
