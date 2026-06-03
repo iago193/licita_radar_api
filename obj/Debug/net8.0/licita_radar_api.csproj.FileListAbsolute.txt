@@ -92,11 +92,6 @@
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.sourcelink.json
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets.build.json
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets.development.json
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets/msbuild.licita_radar_api.Microsoft.AspNetCore.StaticWebAssets.props
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets/msbuild.build.licita_radar_api.props
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.licita_radar_api.props
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.licita_radar_api.props
-/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets.pack.json
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/scopedcss/bundle/licita_radar_api.styles.css
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_r.77221844.Up2Date
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.dll
@@ -104,3 +99,11 @@
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.pdb
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/licita_radar_api.genruntimeconfig.cache
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/ref/licita_radar_api.dll
+/home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/licita_radar_api.staticwebassets.endpoints.json
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/rpswa.dswa.cache.json
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/rjimswa.dswa.cache.json
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/rjsmrazor.dswa.cache.json
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets.build.json.cache
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets.build.endpoints.json
+/home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/swae.build.ex.cache

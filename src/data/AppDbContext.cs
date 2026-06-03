@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using LicitaRadarApi.Model;
-using LicitaRadarApi.Service;
 
 namespace LicitaRadarApi.Data;
 

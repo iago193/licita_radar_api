@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/licita_radar_api.props" />
-</Project>
