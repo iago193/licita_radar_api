@@ -1,6 +1,6 @@
-using LicitaRadarApi.Model;
+using LicitaRadarApi.DTO;
 using LicitaRadarApi.Service;
-
+using LicitaRadarApi.Validators;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LicitaRadarApi.Controllers;
@@ -18,8 +18,13 @@ public class UserController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> create(UserModel user)
+    public async Task<IActionResult> create(DtoUser user)
     {
+        var validator = new CreateUserRequestValidator();
+        var result = validator.Validate(user);
+
+        if (!result.IsValid) return BadRequest(result.Errors.Select(e => e.ErrorMessage));
+
         string res = await _userservice.createUser(user);
         return Ok(res);
     }

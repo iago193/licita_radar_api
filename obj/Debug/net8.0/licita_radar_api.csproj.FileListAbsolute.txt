@@ -107,3 +107,6 @@
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets.build.json.cache
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/staticwebassets.build.endpoints.json
 /home/iago/Documentos/projetos/licita_radar_api/obj/Debug/net8.0/swae.build.ex.cache
+/home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/FluentValidation.dll
+/home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
+/home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll

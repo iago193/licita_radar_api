@@ -1,4 +1,5 @@
 using LicitaRadarApi.Data;
+using LicitaRadarApi.DTO;
 using LicitaRadarApi.Model;
 
 namespace LicitaRadarApi.Service;
@@ -10,10 +11,19 @@ public class UserService
     {
         _context = context;
     }
-    public async Task<string> createUser(UserModel user)
+    public async Task<string> createUser(DtoUser dto)
     {
-        await _context.users.AddAsync(user);
+        var user = new UserModel
+        {
+            Name = dto.Name,
+            LastName = dto.LastName,
+            Email = dto.Email,
+            NumberPhone = dto.NumberPhone,
+            PasswordHash = dto.Password
+        };
 
+        await _context.users.AddAsync(user);
+        
         await _context.SaveChangesAsync();
 
         return "Usuário criado";
