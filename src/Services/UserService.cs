@@ -23,9 +23,24 @@ public class UserService
         };
 
         await _context.users.AddAsync(user);
-        
+
         await _context.SaveChangesAsync();
 
         return "Usuário criado";
+    }
+
+    public async Task<DtoUserGet?> getById(int id)
+    {
+        var resp = await _context.users.FindAsync(id);
+        if (resp == null) return null;
+
+        return new DtoUserGet
+        {
+            Id = resp.Id,
+            Name = resp.Name,
+            LastName = resp.LastName,
+            Email = resp.Email,
+            NumberPhone = resp.NumberPhone
+        };
     }
 }

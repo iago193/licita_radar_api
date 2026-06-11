@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using LicitaRadarApi.Data;
 using LicitaRadarApi.Service;
+using LicitaRadarApi.Token;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<JWT>();
 
 var app = builder.Build();
 

@@ -28,4 +28,13 @@ public class UserController : ControllerBase
         string res = await _userservice.createUser(user);
         return Ok(res);
     }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> getUser(int id)
+    {
+        DtoUserGet res = await _userservice.getById(id);
+
+        if(res == null) NotFound();
+
+        return Ok(res);
+    }
 }

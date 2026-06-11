@@ -3,13 +3,13 @@ version: '3.9'
 services:
   postgres:
     image: postgres:16
-    container_name: postgresdb
+    container_name: licitaApiDb
     restart: "no"
 
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin123
-      POSTGRES_DB: meu_banco
+      POSTGRES_USER: licitaApiDb
+      POSTGRES_PASSWORD: licitaApiDb12345678
+      POSTGRES_DB: licitaApiDb
 
     ports:
       - "5432:5432"
