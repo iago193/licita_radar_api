@@ -16,6 +16,13 @@ public class UserController : ControllerBase
     {
         _userservice = userService;
     }
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetUser(int id)
+    {
+        var res = await _userservice.getById(id);
+
+        return Ok(res);
+    }
 
     [HttpPost]
     public async Task<IActionResult> create(DtoUser user)
@@ -25,16 +32,14 @@ public class UserController : ControllerBase
 
         if (!result.IsValid) return BadRequest(result.Errors.Select(e => e.ErrorMessage));
 
-        string res = await _userservice.createUser(user);
+        object res = await _userservice.createUser(user);
         return Ok(res);
     }
-    [HttpGet("{id}")]
-    public async Task<IActionResult> getUser(int id)
+
+    [HttpPatch("{id}")]
+    public async Task<IActionResult> UpdateUser(int id)
     {
-        DtoUserGet res = await _userservice.getById(id);
 
-        if(res == null) NotFound();
-
-        return Ok(res);
+        return Ok();
     }
 }

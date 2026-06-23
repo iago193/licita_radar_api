@@ -1,5 +1,6 @@
 using LicitaRadarApi.Data;
 using LicitaRadarApi.DTO;
+using LicitaRadarApi.Exceptions;
 using LicitaRadarApi.Model;
 
 namespace LicitaRadarApi.Service;
@@ -11,7 +12,7 @@ public class UserService
     {
         _context = context;
     }
-    public async Task<string> createUser(DtoUser dto)
+    public async Task<object> createUser(DtoUser dto)
     {
         var user = new UserModel
         {
@@ -26,13 +27,19 @@ public class UserService
 
         await _context.SaveChangesAsync();
 
-        return "Usuário criado";
+        return new
+        {
+            message = "Usuário criado com sucesso!"
+        };
     }
 
     public async Task<DtoUserGet?> getById(int id)
     {
         var resp = await _context.users.FindAsync(id);
-        if (resp == null) return null;
+        if (resp == null)
+        {
+            throw new NotFoundException("Usuário não encontrado");
+        }
 
         return new DtoUserGet
         {
@@ -41,6 +48,14 @@ public class UserService
             LastName = resp.LastName,
             Email = resp.Email,
             NumberPhone = resp.NumberPhone
+        };
+    }
+
+    public async Task<object> update(int id)
+    {
+        return new
+        {
+            message = "Usuário editado com sucesso!"
         };
     }
 }
