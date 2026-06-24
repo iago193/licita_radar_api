@@ -2,6 +2,7 @@ using LicitaRadarApi.Data;
 using LicitaRadarApi.DTO;
 using LicitaRadarApi.Exceptions;
 using LicitaRadarApi.Model;
+using LicitaRadarApi.Validators;
 
 namespace LicitaRadarApi.Service;
 
@@ -12,8 +13,13 @@ public class UserService
     {
         _context = context;
     }
-    public async Task<object> createUser(DtoUser dto)
+    public async Task<object> CreateUser(DtoUser dto)
     {
+        var validator = new CreateUserRequestValidator();
+        var result = validator.Validate(dto);
+
+        if (!result.IsValid)  throw AppException.BadRequest("Dados inválidos.");
+
         var user = new UserModel
         {
             Name = dto.Name,
@@ -33,13 +39,12 @@ public class UserService
         };
     }
 
-    public async Task<DtoUserGet?> getById(int id)
+    public async Task<DtoUserGet?> GetById(int id)
     {
         var resp = await _context.users.FindAsync(id);
+
         if (resp == null)
-        {
-            throw new NotFoundException("Usuário não encontrado");
-        }
+            throw AppException.NotFound("Usuário não encontrado");
 
         return new DtoUserGet
         {
@@ -51,11 +56,18 @@ public class UserService
         };
     }
 
-    public async Task<object> update(int id)
+    public async Task Update(int id, DtoUser dto)
     {
-        return new
-        {
-            message = "Usuário editado com sucesso!"
-        };
+        var user = await _context.users.FindAsync(id);
+        
+        if (user == null)
+            throw AppException.NotFound("Usuário não encontrado");
+
+        user.Name = string.IsNullOrWhiteSpace(dto.Name) ? user.Name : dto.Name;
+        user.LastName = string.IsNullOrWhiteSpace(dto.LastName) ? user.LastName : dto.LastName;
+        user.Email = string.IsNullOrWhiteSpace(dto.Email) ? user.Email : dto.Email;
+        user.NumberPhone = string.IsNullOrWhiteSpace(dto.NumberPhone) ? user.NumberPhone : dto.NumberPhone;
+
+        await _context.SaveChangesAsync();
     }
 }
