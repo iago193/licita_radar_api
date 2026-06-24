@@ -18,7 +18,7 @@ public class UserService
         var validator = new CreateUserRequestValidator();
         var result = validator.Validate(dto);
 
-        if (!result.IsValid)  throw AppException.BadRequest("Dados inválidos.");
+        if (!result.IsValid) throw AppException.BadRequest("Dados inválidos.");
 
         var user = new UserModel
         {
@@ -58,8 +58,13 @@ public class UserService
 
     public async Task Update(int id, DtoUser dto)
     {
+        var validator = new UpdateUserRequestValidator();
+        var result = validator.Validate(dto);
+
+        if (!result.IsValid) throw AppException.BadRequest("Dados inválidos.");
+
         var user = await _context.users.FindAsync(id);
-        
+
         if (user == null)
             throw AppException.NotFound("Usuário não encontrado");
 
