@@ -15,6 +15,8 @@ public class UserController : ControllerBase
     {
         _userservice = userService;
     }
+
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetUser(int id)
     {
@@ -23,15 +25,17 @@ public class UserController : ControllerBase
         return Ok(res);
     }
 
+
     [HttpPost]
-    public async Task<IActionResult> create(DtoUser user)
+    public async Task<IActionResult> create(DtoUserCreate user)
     {
         object res = await _userservice.CreateUser(user);
         return Ok(res);
     }
 
+
     [HttpPatch("{id}")]
-    public async Task<IActionResult> UpdateUser(int id, DtoUser user)
+    public async Task<IActionResult> UpdateUser(int id, UpdateDtoUser user)
     {
         await _userservice.Update(id, user);
 
@@ -39,5 +43,12 @@ public class UserController : ControllerBase
         {
             message = "Usuário atualizado com sucesso"
         });
+    }
+
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteUser(int id)
+    {
+        return Ok();
     }
 }

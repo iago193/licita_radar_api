@@ -13,7 +13,7 @@ public class UserService
     {
         _context = context;
     }
-    public async Task<object> CreateUser(DtoUser dto)
+    public async Task<object> CreateUser(DtoUserCreate dto)
     {
         var validator = new CreateUserRequestValidator();
         var result = validator.Validate(dto);
@@ -56,7 +56,7 @@ public class UserService
         };
     }
 
-    public async Task Update(int id, DtoUser dto)
+    public async Task Update(int id, UpdateDtoUser dto)
     {
         var validator = new UpdateUserRequestValidator();
         var result = validator.Validate(dto);

@@ -3,7 +3,7 @@ using LicitaRadarApi.DTO;
 
 namespace LicitaRadarApi.Validators;
 
-public class UpdateUserRequestValidator : AbstractValidator<DtoUser>
+public class UpdateUserRequestValidator : AbstractValidator<UpdateDtoUser>
 {
     public UpdateUserRequestValidator()
     {
