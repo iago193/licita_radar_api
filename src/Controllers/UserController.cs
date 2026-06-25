@@ -18,24 +18,24 @@ public class UserController : ControllerBase
 
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetUser(int id)
+    public async Task<IActionResult> Read(int id)
     {
-        var res = await _userservice.GetById(id);
+        var res = await _userservice.GetUserById(id);
 
         return Ok(res);
     }
 
 
     [HttpPost]
-    public async Task<IActionResult> create(DtoUserCreate user)
+    public async Task<IActionResult> Create(DtoUserCreate user)
     {
         object res = await _userservice.CreateUser(user);
-        return Ok(res);
+        return Created(string.Empty,res);
     }
 
 
     [HttpPatch("{id}")]
-    public async Task<IActionResult> UpdateUser(int id, UpdateDtoUser user)
+    public async Task<IActionResult> Update(int id, UpdateDtoUser user)
     {
         await _userservice.Update(id, user);
 
@@ -47,8 +47,9 @@ public class UserController : ControllerBase
 
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteUser(int id)
+    public async Task<IActionResult> Delete(int id)
     {
-        return Ok();
+        await _userservice.DeleteUser(id);
+        return NoContent();
     }
 }

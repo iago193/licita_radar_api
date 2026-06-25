@@ -18,7 +18,14 @@ public class UserService
         var validator = new CreateUserRequestValidator();
         var result = validator.Validate(dto);
 
-        if (!result.IsValid) throw AppException.BadRequest("Dados inválidos.");
+        if (!result.IsValid)
+        {
+            var errors = result.Errors.Select(e => e.ErrorMessage).ToList();
+            throw AppException.BadRequest(string.Join(", ", errors));
+        }
+
+        if(dto.Password != dto.PasswordRepeat) 
+            throw AppException.Unauthorized("As senhas não coincidem.");
 
         var user = new UserModel
         {
@@ -39,7 +46,7 @@ public class UserService
         };
     }
 
-    public async Task<DtoUserGet?> GetById(int id)
+    public async Task<DtoUserGet?> GetUserById(int id)
     {
         var resp = await _context.users.FindAsync(id);
 
@@ -61,7 +68,11 @@ public class UserService
         var validator = new UpdateUserRequestValidator();
         var result = validator.Validate(dto);
 
-        if (!result.IsValid) throw AppException.BadRequest("Dados inválidos.");
+        if (!result.IsValid)
+        {
+            var errors = result.Errors.Select(e => e.ErrorMessage).ToList();
+            throw AppException.BadRequest(string.Join(", ", errors));
+        }
 
         var user = await _context.users.FindAsync(id);
 
@@ -72,6 +83,18 @@ public class UserService
         user.LastName = string.IsNullOrWhiteSpace(dto.LastName) ? user.LastName : dto.LastName;
         user.Email = string.IsNullOrWhiteSpace(dto.Email) ? user.Email : dto.Email;
         user.NumberPhone = string.IsNullOrWhiteSpace(dto.NumberPhone) ? user.NumberPhone : dto.NumberPhone;
+
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task DeleteUser(int id)
+    {
+        var user = await _context.users.FindAsync(id);
+
+        if (user == null)
+            throw AppException.NotFound("Usuário não encontrado");
+
+        _context.users.Remove(user);
 
         await _context.SaveChangesAsync();
     }
