@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LicitaRadarApi.Controllers;
 
 [ApiController]
-[Route("user")]
+[Route("api/[controller]")]
 
 public class UserController : ControllerBase
 {
@@ -27,7 +27,7 @@ public class UserController : ControllerBase
 
 
     [HttpPost]
-    public async Task<IActionResult> Create(DtoUserCreate user)
+    public async Task<IActionResult> Create(DtoUser user)
     {
         object res = await _userservice.CreateUser(user);
         return Created(string.Empty,res);

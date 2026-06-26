@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "j0hczOByLJE=",
+  "dgSpecHash": "5ZabNiqpbc0=",
   "success": true,
   "projectFilePath": "/home/iago/Documentos/projetos/licita_radar_api/licita_radar_api.csproj",
   "expectedPackageFiles": [
+    "/home/iago/.nuget/packages/bcrypt.net-next/4.2.0/bcrypt.net-next.4.2.0.nupkg.sha512",
     "/home/iago/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
     "/home/iago/.nuget/packages/fluentvalidation.aspnetcore/11.3.1/fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
     "/home/iago/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.11.0/fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",

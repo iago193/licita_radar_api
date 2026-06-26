@@ -3,7 +3,7 @@ namespace LicitaRadarApi.Validators;
 using FluentValidation;
 using LicitaRadarApi.DTO;
 
-public class CreateUserRequestValidator : AbstractValidator<DtoUserCreate>
+public class CreateUserRequestValidator : AbstractValidator<DtoUser>
 {
     public CreateUserRequestValidator()
     {

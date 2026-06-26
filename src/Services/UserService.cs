@@ -1,6 +1,7 @@
 using LicitaRadarApi.Data;
 using LicitaRadarApi.DTO;
 using LicitaRadarApi.Exceptions;
+using LicitaRadarApi.Helper;
 using LicitaRadarApi.Model;
 using LicitaRadarApi.Validators;
 
@@ -13,7 +14,7 @@ public class UserService
     {
         _context = context;
     }
-    public async Task<object> CreateUser(DtoUserCreate dto)
+    public async Task<object> CreateUser(DtoUser dto)
     {
         var validator = new CreateUserRequestValidator();
         var result = validator.Validate(dto);
@@ -33,7 +34,7 @@ public class UserService
             LastName = dto.LastName,
             Email = dto.Email,
             NumberPhone = dto.NumberPhone,
-            PasswordHash = dto.Password
+            PasswordHash = PasswordHelper.GenerateHashPassword(dto.Password)
         };
 
         await _context.users.AddAsync(user);
