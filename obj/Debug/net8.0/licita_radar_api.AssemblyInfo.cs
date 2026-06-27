@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("licita_radar_api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf1369effd269a8843c87c94d827f0b93430e098")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5888f02a039dd1a019ed983ba4ff7fe604b55e33")]
 [assembly: System.Reflection.AssemblyProductAttribute("licita_radar_api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("licita_radar_api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

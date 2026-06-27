@@ -1,3 +1,5 @@
+using LicitaRadarApi.DTO;
+using LicitaRadarApi.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LicitaRadarApi.Controllers;
@@ -7,9 +9,19 @@ namespace LicitaRadarApi.Controllers;
 
 public class AuthController : ControllerBase
 {
-    [HttpPost]
-    public async Task<IActionResult> Login()
+    private readonly AuthService _authService;
+
+    public AuthController(AuthService authService)
     {
-        return Ok("Estamos aqui no login!");
+        _authService = authService;
+    }
+    [HttpPost]
+    public async Task<IActionResult> Login(DtoLoginRequest dto)
+    {
+        string resp =  await _authService.Login(dto);
+        return Ok(new
+        {
+            Token = resp
+        });
     }
 }

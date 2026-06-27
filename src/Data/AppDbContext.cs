@@ -9,5 +9,14 @@ public class AppDbContext : DbContext
         : base(options)
     {
     }
+
     public DbSet<UserModel> users { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<UserModel>(entity =>
+        {
+            entity.HasIndex(u => u.Email).IsUnique();
+        });
+    }
 }

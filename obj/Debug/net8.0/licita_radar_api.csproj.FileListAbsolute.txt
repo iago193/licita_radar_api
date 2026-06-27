@@ -118,3 +118,4 @@
 /home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/home/iago/Documentos/projetos/licita_radar_api/bin/Debug/net8.0/BCrypt-Net-Next.dll

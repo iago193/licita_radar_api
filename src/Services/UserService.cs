@@ -4,6 +4,7 @@ using LicitaRadarApi.Exceptions;
 using LicitaRadarApi.Helper;
 using LicitaRadarApi.Model;
 using LicitaRadarApi.Validators;
+using Microsoft.EntityFrameworkCore;
 
 namespace LicitaRadarApi.Service;
 
@@ -25,7 +26,7 @@ public class UserService
             throw AppException.BadRequest(string.Join(", ", errors));
         }
 
-        if(dto.Password != dto.PasswordRepeat) 
+        if (dto.Password != dto.PasswordRepeat)
             throw AppException.Unauthorized("As senhas não coincidem.");
 
         var user = new UserModel
@@ -39,7 +40,14 @@ public class UserService
 
         await _context.users.AddAsync(user);
 
-        await _context.SaveChangesAsync();
+        try
+        {
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateException ex) when (ex.InnerException?.Message.Contains("IX_users_Email") == true)
+        {
+            throw AppException.Conflict("E-mail já cadastrado.");
+        }
 
         return new
         {
