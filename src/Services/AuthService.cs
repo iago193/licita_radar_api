@@ -3,6 +3,7 @@ using LicitaRadarApi.DTO;
 using LicitaRadarApi.Exceptions;
 using LicitaRadarApi.Helper;
 using LicitaRadarApi.Token;
+using Microsoft.EntityFrameworkCore;
 
 namespace LicitaRadarApi.Service;
 
@@ -16,20 +17,29 @@ public class AuthService
         _context = context;
         _jwt = jwt;
     }
-    public async Task<string> Login(DtoLoginRequest dto)
+    public async Task<object> Login(DtoLoginRequest dto)
     {
-        var resp = await _context.users.FindAsync(dto.Email);
+        var resp = await _context.users.FirstOrDefaultAsync(u => u.Email == dto.Email);
 
-        if(resp == null)
+        if (resp == null)
             throw AppException.Unauthorized("Credenciais inválidas");
 
         bool checkPassword = PasswordHelper.CheckPassword(dto.Password, resp.PasswordHash);
 
-        if(!checkPassword)
+        if (!checkPassword)
             throw AppException.Unauthorized("Credenciais inválidas");
 
         string token = _jwt.GenerateToken(resp);
 
-        return token;
+        return new
+        {
+            token,
+            user = new
+            {
+                id = resp.Id,
+                name = $"{resp.Name} {resp.LastName}",
+                email = resp.Email
+            }
+        };
     }
 }
