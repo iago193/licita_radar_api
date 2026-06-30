@@ -1,11 +1,13 @@
 using LicitaRadarApi.DTO;
 using LicitaRadarApi.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LicitaRadarApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 
 public class UserController : ControllerBase
 {
@@ -25,8 +27,8 @@ public class UserController : ControllerBase
         return Ok(res);
     }
 
-
     [HttpPost]
+    [AllowAnonymous]
     public async Task<IActionResult> Create(DtoUser user)
     {
         object res = await _userservice.CreateUser(user);
