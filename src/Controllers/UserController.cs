@@ -1,4 +1,5 @@
 using LicitaRadarApi.DTO;
+using LicitaRadarApi.Extensions;
 using LicitaRadarApi.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,10 +20,11 @@ public class UserController : ControllerBase
     }
 
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> Read(int id)
+    [HttpGet]
+    public async Task<IActionResult> Read()
     {
-        var res = await _userservice.GetUserById(id);
+        int userId = User.GetUserId();
+        var res = await _userservice.GetUserById(userId);
 
         return Ok(res);
     }
@@ -36,10 +38,11 @@ public class UserController : ControllerBase
     }
 
 
-    [HttpPatch("{id}")]
-    public async Task<IActionResult> Update(int id, UpdateDtoUser user)
+    [HttpPatch]
+    public async Task<IActionResult> Update(UpdateDtoUser user)
     {
-        await _userservice.Update(id, user);
+        int userId = User.GetUserId();
+        await _userservice.Update(userId, user);
 
         return Ok(new
         {
@@ -48,10 +51,11 @@ public class UserController : ControllerBase
     }
 
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
+    [HttpDelete]
+    public async Task<IActionResult> Delete()
     {
-        await _userservice.DeleteUser(id);
+        int userId = User.GetUserId();
+        await _userservice.DeleteUser(userId);
         return NoContent();
     }
 }
