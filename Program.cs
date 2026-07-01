@@ -17,6 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHttpClient<PncpService>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<JWT>();
 builder.Services.AddScoped<AuthService>();
